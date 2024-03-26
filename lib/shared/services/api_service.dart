@@ -10,8 +10,8 @@ import 'package:provider/provider.dart';
 String baseUrl = "https://api.openai.com/v1";
 
 // Change ApiKey Every Hour!!
-// String apiKey = "ApiKey";
-String apiKey = "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";
+// String test_key = "ApiKey";
+String test_key = "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";
 
 class ApiService {
 
@@ -23,7 +23,7 @@ class ApiService {
       var response = await http.post(
         Uri.parse("$baseUrl/chat/completions"),
         headers: {
-          'Authorization': 'Bearer $apiKey',
+          'Authorization': 'Bearer $test_key',
           "Content-Type": "application/json"
         },
         body: jsonEncode(
@@ -69,7 +69,7 @@ class ApiService {
       var response = await http.post(
         Uri.parse("$baseUrl/completions"),
         headers: {
-          'Authorization': 'Bearer $apiKey',
+          'Authorization': 'Bearer $test_key',
           "Content-Type": "application/json"
         },
         body: jsonEncode(
@@ -105,11 +105,11 @@ class ApiService {
   // Delete Message
   static Future deleteMessage({context}) async {
     try {
-      log("delete message apiKey $apiKey");
+      log("delete message test_key $test_key");
       var response = await http.delete(
         Uri.parse("$baseUrl/completions"),
         headers: {
-          'Authorization': 'Bearer $apiKey',
+          'Authorization': 'Bearer $test_key',
           "Content-Type": "application/json"
         },
         body: jsonEncode(
